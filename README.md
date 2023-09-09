@@ -12,3 +12,6 @@ Langkah-Langkah Menjalankan Aplikasinya:
 - Lalu, buka *XAMPP* dan jalankan *Apache & MySQL*.
 - Buka lagi Teriminal, *php artisan migrate --seed*.
 - Kemudian, jalankan *php artisan serve*.
+
+Jika data pada database tidak masuk setelah di migrate, input manual saja dengan import file dari GDrive
+https://drive.google.com/file/d/1qCoU4ux-hVM34y-96WeNVdI9kmGeyLlB/view?usp=drive_link
