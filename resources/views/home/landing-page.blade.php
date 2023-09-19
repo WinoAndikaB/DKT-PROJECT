@@ -288,6 +288,8 @@
                                           <h6 class="card-title text-center">{{$katalogDonasi['namaDonasi']}}</h6>
                                           <p class="text-center">{{$katalogDonasi['deskripsi']}}</p>
                                           <hr>
+                                        <p class="text-center">{{$katalogDonasi['created_at']}}</p>
+                                          <hr>
                                           <br>
                                           <a href="/login" class="btn btn-primary btn-round btn-lg btn-block">
                                             <i class="now-ui-icons business_money-coins"></i>

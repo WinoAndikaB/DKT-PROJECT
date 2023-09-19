@@ -162,10 +162,12 @@
                                         <h5 class="card-title text-center">{{$katalogDonasi['jenisDonor']}}</h5>
                                         <h6 class="card-title text-center">{{$katalogDonasi['namaDonasi']}}</h6>
                                         <p class="text-center">{{$katalogDonasi['deskripsi']}}</p>
-                                        <a href="/formInputUang" class="btn btn-primary">
+                                        <hr>
+                                        <p class="text-center">{{$katalogDonasi['created_at']}}</p>
+                                        <a href="/formInputUang/{{ $katalogDonasi->id}}" class="btn btn-primary">
                                           <i class="now-ui-icons business_money-coins"></i>
                                           Donasi Uang</a>
-                                        <a href="/formInputBarang" class="btn btn-primary">
+                                        <a href="/formInputBarang/{{ $katalogDonasi->id}}" class="btn btn-primary">
                                         <i class="now-ui-icons shopping_box"></i>
                                           Donasi Barang</a>
                                     </div>

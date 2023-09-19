@@ -141,8 +141,25 @@
                     <i class="now-ui-icons design_bullet-list-67"></i>
                   </span>
                 </div>
-                <input type="text" class="form-control" placeholder="Jenis Donor..." name="jenisDonor">
+                <input type="text" class="form-control" placeholder="ID..." name="id" readonly value="{{$data->id}}">
               </div>
+              <div class="input-group no-border input-lg">
+                <div class="input-group-prepend">
+                  <span class="input-group-text">
+                    <i class="now-ui-icons design_bullet-list-67"></i>
+                  </span>
+                </div>
+                <input type="text" class="form-control" placeholder="Jenis Donor..." name="idJenisDonor" readonly value="{{$data->jenisDonor}}">
+              </div>
+              <div class="input-group no-border input-lg">
+                <div class="input-group-prepend">
+                  <span class="input-group-text">
+                    <i class="now-ui-icons design_bullet-list-67"></i>
+                  </span>
+                </div>
+                <input type="text" class="form-control" placeholder="Nama Donasi..." name="namaDonasi" readonly value="{{$data->namaDonasi}}">
+              </div>
+              <hr>
                 <div class="input-group no-border input-lg">
                   <div class="input-group-prepend">
                     <span class="input-group-text">
@@ -184,6 +201,7 @@
                   <input type="text" placeholder="Pesan..." class="form-control" name="pesan">
                 </div>
                 <button class="btn btn-primary btn-round btn-lg btn-block">Donasi</button>
+                <a href="/user"class="btn btn-edit btn-round btn-lg btn-block"> Kembali</a>
               </div>
               
                 </form>
