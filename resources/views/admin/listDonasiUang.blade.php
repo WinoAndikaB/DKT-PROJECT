@@ -48,6 +48,9 @@
                         Jenis Donor
                       </th>
                       <th>
+                        ID Donasi Katalog
+                      </th>
+                      <th>
                         Donatur
                       </th>
                       <th>
@@ -74,6 +77,9 @@
                         </td>
                         <td>
                           {{$donasiuang['jenisDonor']}}
+                        </td>
+                        <td>
+                          {{$donasiuang['idJenisDonor']}}
                         </td>
                         <td>
                           {{$donasiuang['donatur']}}

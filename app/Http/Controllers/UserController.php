@@ -42,11 +42,24 @@ class UserController extends Controller
         // return view('home.formInputUang');
     }
 
+    function tampilDataUang($id){
+        $data = tambahdonases::find($id);
+        //dd($data);
+        return view('home.formInputUang', compact('data'));
+    }
+
+    function tampilDataBarang($id){
+        $data = tambahdonases::find($id);
+        //dd($data);
+        return view('home.formInputBarang', compact('data'));
+    }
+
     public function storeUang(Request $request)
     {
        // dd($request->input());
      $validated = $request->validate([
             'jenisDonor'=>'required',
+            'idJenisDonor'=>'required',
             'email'=>'required',
             'donatur'=>'required', 
             'nominalDonasi'=>'required', 
@@ -73,6 +86,7 @@ class UserController extends Controller
        // dd($request->input());
             $validated = $request->validate([
             'jenisDonor'=>'required',
+            'idJenisDonor'=>'required',
             'email'=>'required',
             'donatur'=>'required', 
             'gambar'=>'required', 
