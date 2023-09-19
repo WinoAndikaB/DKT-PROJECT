@@ -270,7 +270,9 @@
                                   </select>
                                 
                                   <div class="form-group">
-                                  <button type="submit" class="btn btn-primary">Filter Donasi</button>
+                                  <button type="submit" class="btn btn-primary">Filter Donasi
+                                  <i class="now-ui-icons ui-1_zoom-bold"></i>
+                                  </button>
                                  </div>
                                 </div>
                               </div>
