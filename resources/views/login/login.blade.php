@@ -21,7 +21,7 @@
 <head>
   <meta charset="utf-8" />
   <link rel="apple-touch-icon" sizes="76x76" href="../assets/img/apple-icon.png">
-  <link rel="icon" type="image/png" href="../assets/img/favicon.png">
+  <link rel="icon" type="image/png" href="../assets/img/5.png">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
   <title>
     Login - DOKITA
@@ -59,7 +59,7 @@
         </div>
       </div>
       <div class="navbar-translate">
-        <a class="navbar-brand" href="" rel="tooltip" title="Created by DOKITA Team. Template by Creative Tim" data-placement="bottom" target="_blank">
+        <a class="navbar-brand" href="/" rel="tooltip" title="Created by DOKITA Team. Template by Creative Tim" data-placement="bottom" target="_blank">
           DOKITA
         </a>
         <button class="navbar-toggler navbar-toggler" type="button" data-toggle="collapse" data-target="#navigation" aria-controls="navigation-index" aria-expanded="false" aria-label="Toggle navigation">
@@ -103,7 +103,7 @@
               @csrf
               <div class="card-header text-center">
                 <div class="logo-container">
-                  <img src="../assets/img/now-logo.png" alt="">
+                 
                 </div>
               </div>
               @if ($errors->any())
@@ -165,7 +165,7 @@
           <script>
             document.getElementById('copyright').appendChild(document.createTextNode(new Date().getFullYear()))
           </script>, Created by
-          <a href="" target="_blank">DOKITA Team</a>. Template by
+          <a href="/" target="_blank">DOKITA Team</a>. Template by
           <a href="https://www.creative-tim.com/product/now-ui-dashboard" target="_blank">Creative Tim</a>.
         </div>
       </div>
