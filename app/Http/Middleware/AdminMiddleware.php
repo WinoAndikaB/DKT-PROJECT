@@ -15,11 +15,23 @@ class AdminMiddleware
      * @param  \Closure(\Illuminate\Http\Request): (\Illuminate\Http\Response|\Illuminate\Http\RedirectResponse)  $next
      * @return \Illuminate\Http\Response|\Illuminate\Http\RedirectResponse
      */
-    public function handle(Request $request, Closure $next)
+    // public function handle(Request $request, Closure $next)
+    // {
+    //     if(Auth::user()->role != "admin"){
+    //         return redirect()->to('/logout');
+    //     }
+    //     return $next($request);
+    // }
+    public function handle($request, Closure $next)
     {
-        if(Auth::user()->role != "admin"){
-            return redirect()->to('/logout');
+        // Check if the user is authenticated
+        if (auth()->check()) {
+            // Check the user's role
+            if (auth()->user()->role === 'admin') {
+                return $next($request);
+            }
         }
-        return $next($request);
+        // If the user is not authenticated or doesn't have the 'spradm' role, redirect to /logout
+        return redirect()->to('/logout');
     }
 }
