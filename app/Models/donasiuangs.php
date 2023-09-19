@@ -10,4 +10,5 @@ class donasiuangs extends Model
     use HasFactory;
     protected $fillable = [
         'id','jenisDonor','idJenisDonor','email','donatur', 'nominalDonasi', 'pesan'];
+        
 }

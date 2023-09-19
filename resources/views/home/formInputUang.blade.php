@@ -143,7 +143,7 @@
                     <i class="now-ui-icons design_bullet-list-67"></i>
                   </span>
                 </div>
-                <input type="text" class="form-control" placeholder="ID..." name="id" readonly value="{{$data->id}}">
+                <input type="text" class="form-control" placeholder="ID..." name="idJenisDonor" readonly value="{{$data->id}}">
               </div>
               <div class="input-group no-border input-lg">
                 <div class="input-group-prepend">
@@ -151,7 +151,7 @@
                     <i class="now-ui-icons design_bullet-list-67"></i>
                   </span>
                 </div>
-                <input type="text" class="form-control" placeholder="Jenis Donor..." name="idJenisDonor" readonly value="{{$data->jenisDonor}}">
+                <input type="text" class="form-control" placeholder="Jenis Donor..." name="jenisDonor" readonly value="{{$data->jenisDonor}}">
               </div>
               <div class="input-group no-border input-lg">
                 <div class="input-group-prepend">
