@@ -42,6 +42,29 @@ class UserController extends Controller
         // return view('home.formInputUang');
     }
 
+    // function tampilDataUang($id){
+    //     $data = tambahdonases::find($id);
+    //     //dd($data);
+    //     return view('home.formInputUang', compact('data'));
+    // }
+
+    // function tampilDataBarang($id){
+    //     $data = tambahdonases::find($id);
+    //     //dd($data);
+    //     return view('home.formInputBarang', compact('data'));
+    // }
+
+    // public function storeUang(Request $request)
+    // {
+    //    // dd($request->input());
+    //  $validated = $request->validate([
+    //         'jenisDonor'=>'required',
+    //         'idJenisDonor'=>'required',
+    //         'email'=>'required',
+    //         'donatur'=>'required', 
+    //         'nominalDonasi'=>'required', 
+    //         'pesan'=>'required',
+    //     ]);
     function tampilDataUang($id){
         $data = tambahdonases::find($id);
         //dd($data);
@@ -76,7 +99,25 @@ class UserController extends Controller
 
     public function storeBarang(Request $request)
     {
-        $strBarang = donasibarangs::create($request->all());
+    //     $strBarang = donasibarangs::create($request->all());
+    //     if($request->hasFile('gambar')){
+    //         $request->file('gambar')->move('donasiBarang/', $request->file('gambar')->getClientOriginalName());
+    //         $strBarang->gambar = $request->file('gambar')->getClientOriginalName();
+    //         $strBarang->save();
+    //         return redirect("/terimakasih");
+    //     }
+    //    // dd($request->input());
+    //         $validated = $request->validate([
+    //         'jenisDonor'=>'required',
+    //         'idJenisDonor'=>'required',
+    //         'email'=>'required',
+    //         'donatur'=>'required', 
+    //         'gambar'=>'required', 
+    //         'namaBarang'=>'required', 
+    //         'pesan'=>'required',
+    //     ]);
+
+    $strBarang = donasibarangs::create($request->all());
         if($request->hasFile('gambar')){
             $request->file('gambar')->move('donasiBarang/', $request->file('gambar')->getClientOriginalName());
             $strBarang->gambar = $request->file('gambar')->getClientOriginalName();
