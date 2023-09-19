@@ -63,7 +63,7 @@ class UserController extends Controller
             'email'=>'required',
             'donatur'=>'required', 
             'nominalDonasi'=>'required', 
-            'pesan'=>'required'
+            'pesan'=>'required',
         ]);
 
         donasiuangs::create($validated);
@@ -91,7 +91,7 @@ class UserController extends Controller
             'donatur'=>'required', 
             'gambar'=>'required', 
             'namaBarang'=>'required', 
-            'pesan'=>'required'
+            'pesan'=>'required',
         ]);
 
         donasibarangs::create($validated);
