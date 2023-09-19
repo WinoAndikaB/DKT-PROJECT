@@ -89,28 +89,7 @@ class SessionController extends Controller
        ]);
             return redirect('/login');
     }
-/**
-    function login(Request $request){
-        $request->validate([
-            'email'=>'required',
-            'password'=>'required',
-        ],[
-            'email.required'=>'email wajib diisi',
-            'password.required'=>'password wajib diisi',
-        ]);
 
-        $infologin = [
-            'email'=>$request->email,
-            'password'=>$request->password,
-        ];
-
-        if(Auth::attempt($infologin)){
-            return redirect('/admin');
-        }else{
-            return redirect('')->withErrors('Username dan password yang dimasukkan tidak sesuai')->withInput();
-        }
-    }
-*/
 
 public function info() {
 return view('home.info');
