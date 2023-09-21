@@ -126,6 +126,21 @@
             <ul class="navbar-nav">
               <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  <i class="now-ui-icons ui-1_bell-53"></i>
+                  <p>
+                    
+                  </p>
+                </a>
+                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownMenuLink">
+                  <a class="dropdown-item" href="#">Pesan Baru 1</a>
+                  <a class="dropdown-item" href="#">Pesan Baru 2</a>
+                  <a class="dropdown-item" href="#">Pesan Baru 3</a>
+                  <a class="dropdown-item" href="#">Pesan Baru 4</a>
+                  <a class="dropdown-item" href="#">Pesan Baru 5</a>
+                </div>
+              </li>
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                   <i class="now-ui-icons users_single-02"></i>
                   <p>
                     <span class="d-lg-none d-md-block">Some Actions</span>
