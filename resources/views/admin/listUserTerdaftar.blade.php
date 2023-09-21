@@ -53,7 +53,7 @@
                         Role
                       </th>
                       <th>
-                        Action
+                        
                       </th>
                     </thead>
                     <tbody>
@@ -72,8 +72,10 @@
                           {{$user['role']}}
                         </td>
                         <td>
-                        <a href={{"delete/".$user['id']}} class="btn btn-danger" onclick="return confirm('Apakah Anda Yakin Mau Menghapus Data Ini?')">Hapus</i></a>
-                        </td>       
+                          <a href={{"delete/".$user['id']}}
+                          class="btn btn-danger btn-icon btn-round" onclick="return confirm('Apakah Anda Yakin Mau Menghapus Data Ini?')">
+                          <i class="now-ui-icons ui-1_simple-remove"></i></a>
+                        </td>        
                       </tr>
                       @endforeach
                       <b>Total Data :</b> {{$users->count()}}

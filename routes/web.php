@@ -50,6 +50,10 @@ Route::get('/delete/{id}',[AdminController::class,'deleteUserTerdaftar']);
 Route::get('/deleteU/{id}',[AdminController::class,'deleteDonasiUang']);
 Route::get('/deleteB/{id}',[AdminController::class,'deleteDonasiBarang']);
 
+//Edit data Tambah Donasi
+Route::get('/tampilDataEditTambahDonasi/{id}',[AdminController::class,'tampilDataEditTambahDonasi']);
+Route::post('/updateDataEditTambahDonasi/{id}',[AdminController::class,'updateDataEditTambahDonasi']);
+
 //Menambahkan Donasi untuk ditampilkan di katalog user
 Route::get('/tbhDonasi',[AdminController::class,'tambahDonasi']);
 });

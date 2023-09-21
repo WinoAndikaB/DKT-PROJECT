@@ -43,7 +43,7 @@
               </div>
               <div class="card-footer text-center">
                 <button name="submit" type="submit" class="btn btn-primary">Register</button>
-                <a href="/tbhDonasi" class="btn btn-info">Kembali</i></a>
+                <a href="/listUserTerdaftar" class="btn btn-info">Kembali</i></a>
               </form>
 
               </div>

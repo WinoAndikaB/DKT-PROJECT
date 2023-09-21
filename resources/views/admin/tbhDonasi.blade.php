@@ -63,7 +63,10 @@
                         Tanggal
                       </th>
                       <th>
-                        Action
+                        
+                      </th>
+                      <th>
+                        
                       </th>
                     </thead>
                     <tbody>
@@ -88,7 +91,14 @@
                           {{$tbhDns['created_at']}}
                         </td>
                         <td>
-                          <a href={{"deleteT/".$tbhDns['id']}} class="btn btn-danger" onclick="return confirm('Apakah Anda Yakin Mau Menghapus Data Ini?')">Hapus</i></a>
+                          <a href={{"tampilDataEditTambahDonasi/".$tbhDns['id']}} 
+                          class="btn btn-info btn-icon btn-round">
+                          <i class="now-ui-icons design-2_ruler-pencil"></i></a>
+                        </td>
+                        <td>
+                          <a href={{"deleteT/".$tbhDns['id']}}
+                          class="btn btn-danger btn-icon btn-round" onclick="return confirm('Apakah Anda Yakin Mau Menghapus Data Ini?')">
+                          <i class="now-ui-icons ui-1_simple-remove"></i></a>
                         </td>       
                       </tr>
                       @endforeach

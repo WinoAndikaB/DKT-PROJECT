@@ -172,8 +172,6 @@ class AdminController extends Controller
 
     function storeTbhDonasi(Request $request)
     {
-       // $tbhDonasi= new tambahdonases();
-        //$tbhDonasi->jenisDonor=$req->jenisDonor;
 
         $tbhDonasi = tambahdonases::create($request->all());
         if($request->hasFile('foto')){
@@ -192,18 +190,23 @@ class AdminController extends Controller
 
         tambahdonases::create($validated);
         return redirect("/tbhDonasi");
-      //  $tbhDonasi->jenisDonor=$req->jenisDonor;
-      //  $tbhDonasi->foto=$req->foto;
-      //  $tbhDonasi->namaDonasi=$req->namaDonasi;
-       // $tbhDonasi->deskripsi=$req->deskripsi;
-        //$tbhDonasi->save();
-        //return redirect('/tbhDonasi')->with('success', 'Data Berhasil Ditambahkan');
     }
 
     function deleteTambahDonasi($id)
     {
         $data=tambahdonases::find($id);
         $data->delete();
+        return redirect('/tbhDonasi');
+    }
+
+     function tampilDataEditTambahDonasi($id){
+        $data = tambahdonases::find($id);
+        return view('admin.formEditDataTambahDonasi', compact('data'));
+    }
+
+    function updateDataEditTambahDonasi(Request $request, $id){
+        $data = tambahdonases::find($id);
+        $data->update($request->all());
         return redirect('/tbhDonasi');
     }
 }
