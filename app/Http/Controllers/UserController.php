@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\tambahdonasis;
+use App\Models\Donatur;
 use App\Models\donasibarangs;
 use App\Models\donasiuangs;
 use App\Models\tambahdonases;
@@ -44,7 +44,6 @@ class UserController extends Controller
 
     function tampilDataUang($id){
         $data = tambahdonases::find($id);
-        //dd($data);
         return view('home.formInputUang', compact('data'));
     }
 

@@ -88,7 +88,7 @@
                           {{$donasiuang['created_at']}}
                         </td>
                         <td>
-                          {{$donasiuang['nominalDonasi']}}
+                          Rp {{ number_format(floatval($donasiuang->nominalDonasi)) }}
                         </td>
                         <td>
                           {{$donasiuang['pesan']}}

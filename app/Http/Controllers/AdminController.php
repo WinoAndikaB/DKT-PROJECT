@@ -185,7 +185,9 @@ class AdminController extends Controller
             'jenisDonor'=>'required',
             'foto'=>'required', 
             'namaDonasi'=>'required', 
-            'deskripsi'=>'required'
+            'deskripsi'=>'required',
+            'nominalDonasi'=>'required',
+            'targetDonasi'=>'required'
         ]);
 
         tambahdonases::create($validated);

@@ -9,5 +9,5 @@ class tambahdonases extends Model
 {
     use HasFactory;
     protected $fillable = [
-        'id','jenisDonor','foto','namaDonasi', 'deskripsi'];
+        'id','jenisDonor','foto','namaDonasi', 'deskripsi','nominalDonasi','targetDonasi'];
 }
