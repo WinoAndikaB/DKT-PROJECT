@@ -288,9 +288,22 @@
                                       <div class="card-body">
                                           <h5 class="card-title text-center">{{$katalogDonasi['jenisDonor']}}</h5>
                                           <h6 class="card-title text-center">{{$katalogDonasi['namaDonasi']}}</h6>
-                                          <p class="text-center">{{$katalogDonasi['deskripsi']}}</p>
+                                          <p class="text-center">{{$katalogDonasi['deskripsi']}}</p>  
                                           <hr>
-                                        <p class="text-center">{{$katalogDonasi['created_at']}}</p>
+                                        <h6 class="text-center">Target Donasi:</p>
+                                        <p class="text-center">Rp {{ number_format($katalogDonasi->targetDonasi) }}</p>
+                                        <hr>
+                                        <div class="progress">
+                                            @php
+                                            $nominalDonasi = floatval($katalogDonasi['nominalDonasi']);
+                                            $targetDonasi = floatval($katalogDonasi['targetDonasi']);
+                                            $percentage = $targetDonasi > 0 ? ($nominalDonasi / $targetDonasi) * 100 : 0;
+                                            @endphp        
+                                          <div class="progress-bar" role="progressbar" style="width: {{ $percentage }}%;" aria-valuenow="{{ $nominalDonasi }}" aria-valuemin="0" aria-valuemax="{{ $targetDonasi }}"></div>
+                                        </div>
+                                            <p class="text-center">Terkumpul: {{ number_format(floatval($katalogDonasi->nominalDonasi))}} / {{ number_format(floatval($katalogDonasi->targetDonasi))}}</p>
+                                            <hr>                     
+                                          <p class="text-center">{{$katalogDonasi['created_at']}}</p>                                      
                                           <hr>
                                           <br>
                                           <a href="/login" class="btn btn-primary btn-round btn-lg btn-block">

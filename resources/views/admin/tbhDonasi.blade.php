@@ -60,6 +60,9 @@
                         Deskripsi 
                       </th>
                       <th>
+                        Target Donasi
+                      </th>
+                      <th>
                         Tanggal
                       </th>
                       <th>
@@ -86,6 +89,9 @@
                         </td>
                         <td>
                           {{$tbhDns['deskripsi']}}
+                        </td>
+                        <td>
+                          Rp {{ number_format($tbhDns->targetDonasi) }}
                         </td>
                         <td>
                           {{$tbhDns['created_at']}}
