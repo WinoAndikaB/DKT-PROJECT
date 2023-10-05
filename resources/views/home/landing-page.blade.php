@@ -304,17 +304,17 @@
                                                   $percentage = $targetDonasi > 0 ? ($nominalDonasi / $targetDonasi) * 100 : 0;
                                                   $formattedPercentage = number_format($percentage);
                                                   @endphp
-                                                  <div class="progress-bar progress-bar-orange" role="progressbar" style="width: 20px;" aria-valuenow="{{ $nominalDonasi }}" aria-valuemin="0" aria-valuemax="{{ $targetDonasi }}"></div>
+                                                  <div class="progress-bar progress-bar-orange" role="progressbar" style="width: {{ $formattedPercentage }}%;" aria-valuenow="{{ $nominalDonasi }}" aria-valuemin="0" aria-valuemax="{{ $targetDonasi }}"></div>
                                                   <span class="progress-value">{{ $formattedPercentage }}%</span>
                                                 </div>
                                               </div>                                                                   
                                                   <p class="text-center">Terkumpul: Rp. {{ number_format(floatval($katalogDonasi->nominalDonasi))}} / Rp. {{ number_format(floatval($katalogDonasi->targetDonasi))}}</p>
                                               <hr>
                                               <p class="text-center">{{$katalogDonasi['created_at']}}</p>
-                                              <a href="/formInputUang/{{ $katalogDonasi->id}}" class="btn btn-primary">
+                                              <a href="/login" class="btn btn-primary">
                                                 <i class="now-ui-icons business_money-coins"></i>
                                                 Donasi Uang</a>
-                                              <a href="/formInputBarang/{{ $katalogDonasi->id}}" class="btn btn-primary">
+                                              <a href="/login" class="btn btn-primary">
                                               <i class="now-ui-icons shopping_box"></i>
                                                 Donasi Barang</a>
                                           </div>
