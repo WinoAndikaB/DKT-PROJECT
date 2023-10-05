@@ -32,6 +32,7 @@ Route::get('/logout', [SessionController::class, 'logout'])->name('logout');
 Route::middleware(['admin'])->group(function () {
 Route::get('/admin',[AdminController::class,'dashboard']);
 Route::get('/dashboard',[AdminController::class,'dashboard']);
+Route::get('/progressDonasi',[AdminController::class,'progressDonasi']);
 Route::get('/listDonasiUang',[AdminController::class,'listDonasiUang']);
 Route::get('/listDonasiBarang',[AdminController::class,'listDonasiBarang']);
 Route::get('/listUserTerdaftar',[AdminController::class,'listUserTerdaftar']);

@@ -35,7 +35,9 @@
   <link href="../assets/css/now-ui-dashboard.css?v=1.5.0" rel="stylesheet" />
   <!-- CSS Just for demo purpose, don't include it in your project -->
   <link href="../assets/demo/demo.css" rel="stylesheet" />
+  @yield('link')
 </head>
+
 
 <body class="">
   <div class="wrapper ">
@@ -58,11 +60,16 @@
               <p>Dashboard</p>
             </a>
           </li>
-          <li>
-            
+          <li>  
             <a href="./tbhDonasi">
               <i class="now-ui-icons ui-1_simple-add"></i>
               <p>Tambah Donasi</p>
+            </a>
+          </li>
+          <li>  
+            <a href="./progressDonasi">
+              <i class="now-ui-icons media-2_sound-wave"></i>
+              <p>Progress Donasi</p>
             </a>
             <hr color="white">
           </li>

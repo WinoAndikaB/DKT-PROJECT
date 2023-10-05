@@ -69,6 +69,22 @@ class AdminController extends Controller
         'gerejab','retailerb','organisasib','individub','pemerintahb'));
     }
 
+    //Progress Donasi
+    function progressDonasi(){
+        $dataKatalog= tambahdonases::all();
+
+            $jd = request()->input('jenisDonors');
+            $dataKatalog = tambahdonases::query();
+        
+            if ($jd) {
+                $dataKatalog = $dataKatalog->where('jenisDonor', $jd);
+            }
+        
+            $tambahdonases = $dataKatalog->get();
+    
+        return view('admin.progressDonasi',['tambahdonases'=>$tambahdonases]);
+    }
+
     //DONASI UANG
     function listDonasiUang(){
         $jd = request()->input('jenisDonors');
