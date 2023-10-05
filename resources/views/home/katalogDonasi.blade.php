@@ -15,6 +15,8 @@
 * The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
 
 -->
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -181,16 +183,21 @@
                                         <h6 class="text-center">Target Donasi:</p>
                                         <p class="text-center">Rp {{ number_format($katalogDonasi->targetDonasi) }}</p>
                                         <hr>
-                                        <div class="progress">
+                                        <div class="progress-container progress-primary">
+                                          <span class="progress-badge">Progress</span>
+                                          <div class="progress">
                                             @php
                                             $nominalDonasi = floatval($katalogDonasi['nominalDonasi']);
                                             $targetDonasi = floatval($katalogDonasi['targetDonasi']);
                                             $percentage = $targetDonasi > 0 ? ($nominalDonasi / $targetDonasi) * 100 : 0;
-                                            @endphp        
-                                          <div class="progress-bar" role="progressbar" style="width: {{ $percentage }}%;" aria-valuenow="{{ $nominalDonasi }}" aria-valuemin="0" aria-valuemax="{{ $targetDonasi }}"></div>
-                                        </div>
-                                            <p class="text-center">Terkumpul: {{ number_format(floatval($katalogDonasi->nominalDonasi))}} / {{ number_format(floatval($katalogDonasi->targetDonasi))}}</p>
-                                            <hr>
+                                            $formattedPercentage = number_format($percentage);
+                                            @endphp
+                                            <div class="progress-bar progress-bar-orange" role="progressbar" style="width: 20px;" aria-valuenow="{{ $nominalDonasi }}" aria-valuemin="0" aria-valuemax="{{ $targetDonasi }}"></div>
+                                            <span class="progress-value">{{ $formattedPercentage }}%</span>
+                                          </div>
+                                        </div>                                                                   
+                                            <p class="text-center">Terkumpul: Rp. {{ number_format(floatval($katalogDonasi->nominalDonasi))}} / Rp. {{ number_format(floatval($katalogDonasi->targetDonasi))}}</p>
+                                        <hr>
                                         <p class="text-center">{{$katalogDonasi['created_at']}}</p>
                                         <a href="/formInputUang/{{ $katalogDonasi->id}}" class="btn btn-primary">
                                           <i class="now-ui-icons business_money-coins"></i>
