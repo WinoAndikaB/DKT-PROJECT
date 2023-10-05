@@ -33,11 +33,11 @@
   <!-- CSS Files -->
   <link href="../assets/css/bootstrap.min.css" rel="stylesheet" />
   <link href="../assets/css/now-ui-dashboard.css?v=1.5.0" rel="stylesheet" />
+  <link href="{{ asset('assets/css/now-ui-dashboard.css?v=1.5.0') }}" rel="stylesheet" />
+
   <!-- CSS Just for demo purpose, don't include it in your project -->
   <link href="../assets/demo/demo.css" rel="stylesheet" />
-  @yield('link')
 </head>
-
 
 <body class="">
   <div class="wrapper ">
@@ -53,50 +53,43 @@
       </div>
       <div class="sidebar-wrapper" id="sidebar-wrapper">
         <ul class="nav">
-         
-          <li>
+          <li class="{{ Request::is('dashboard*') ? 'active' : '' }}">
             <a href="./dashboard">
               <i class="now-ui-icons design_app"></i>
               <p>Dashboard</p>
             </a>
           </li>
-          <li>  
+          <li class="{{ Request::is('tbhDonasi*') ? 'active' : '' }}">
             <a href="./tbhDonasi">
               <i class="now-ui-icons ui-1_simple-add"></i>
               <p>Tambah Donasi</p>
             </a>
           </li>
-          <li>  
+          <li class="{{ Request::is('progressDonasi*') ? 'active' : '' }}"> 
             <a href="./progressDonasi">
               <i class="now-ui-icons media-2_sound-wave"></i>
               <p>Progress Donasi</p>
             </a>
             <hr color="white">
           </li>
-          <li>
+          <li class="{{ Request::is('listDonasiUang*') ? 'active' : '' }}">
             <a href="./listDonasiUang">
               <i class="now-ui-icons business_money-coins"></i>
               <p>List Donasi Uang</p>
             </a>
           </li>
-          <li>
+          <li class="{{ Request::is('listDonasiBarang*') ? 'active' : '' }}">
             <a href="./listDonasiBarang">
               <i class="now-ui-icons shopping_box"></i>
               <p>List Donasi Barang</p>
             </a>
           </li>
-          <li>
+          <li class="{{ Request::is('listUserTerdaftar*') ? 'active' : '' }}">
             <a href="./listUserTerdaftar">
               <i class="now-ui-icons users_single-02"></i>
               <p>List User Terdaftar</p>
             </a>
           </li>
-          <!-- <li class="active-pro">
-            <a href="./upgrade.html">
-              <i class="now-ui-icons arrows-1_cloud-download-93"></i>
-              <p>Upgrade to PRO</p>
-            </a>
-          </li>-->
         </ul>
       </div>
     </div>
