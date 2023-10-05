@@ -192,7 +192,7 @@
                                             $percentage = $targetDonasi > 0 ? ($nominalDonasi / $targetDonasi) * 100 : 0;
                                             $formattedPercentage = number_format($percentage);
                                             @endphp
-                                            <div class="progress-bar progress-bar-orange" role="progressbar" style="width: 20px;" aria-valuenow="{{ $nominalDonasi }}" aria-valuemin="0" aria-valuemax="{{ $targetDonasi }}"></div>
+                                            <div class="progress-bar progress-bar-orange" role="progressbar" style="width: {{ $formattedPercentage }}%;" aria-valuenow="{{ $nominalDonasi }}" aria-valuemin="0" aria-valuemax="{{ $targetDonasi }}"></div>
                                             <span class="progress-value">{{ $formattedPercentage }}%</span>
                                           </div>
                                         </div>                                                                   
