@@ -17,17 +17,46 @@ class donasiUangSeeder extends Seeder
     {
         $userData = [
             [
+                'jenisDonor'=>'Gereja',
+                'idJenisDonor'=>'1',
                 'email'=>'wino1@gmail.com',
                 'donatur'=>'Wino Andika Batara',
-                'nominalDonasi'=>'200.000',
-                'pesan'=>'Lahhh11111',
+                'nominalDonasi'=>'200000',
+                'pesan'=>'Mantap Jiwaaa',
             ],
             [
-                'email'=>'wino@gmail.com',
-                'donatur'=>'Wino Andika Batara',
-                'nominalDonasi'=>'200.000',
-                'pesan'=>'Lahhh2222',
+                'jenisDonor'=>'Organisasi',
+                'idJenisDonor'=>'2',
+                'email'=>'bintang@gmail.com',
+                'donatur'=>'Bintang Harapan',
+                'nominalDonasi'=>'350000',
+                'pesan'=>'Semoga Bermanfaat',
             ],
+            [
+                'jenisDonor'=>'Retailer',
+                'idJenisDonor'=>'3',
+                'email'=>'kobo@gmail.com',
+                'donatur'=>'Kobo Kanaeru',
+                'nominalDonasi'=>'550000',
+                'pesan'=>'Semoga Berguna',
+            ],
+            [
+                'jenisDonor'=>'Pemerintah',
+                'idJenisDonor'=>'4',
+                'email'=>'moona@gmail.com',
+                'donatur'=>'Moona Hoshinova',
+                'nominalDonasi'=>'650000',
+                'pesan'=>'Hadiah Dari Puteri Bulan',
+            ],
+            [
+                'jenisDonor'=>'Individu',
+                'idJenisDonor'=>'5',
+                'email'=>'zeta@gmail.com',
+                'donatur'=>'Vestia Zeta',
+                'nominalDonasi'=>'750000',
+                'pesan'=>'Hadiah dari kucing PON',
+            ],
+
         ];
         foreach($userData as $key=> $val){
             donasiuangs::create($val);

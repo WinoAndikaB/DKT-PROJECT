@@ -15,7 +15,7 @@
               <h5 class="title">Edit Profile</h5>
           </div>
           <div class="card-body">
-            <form method="POST" action="{{ route('profile.update', ['id' => Auth::user()->id]) }}">
+            <form method="POST" action="{{ route('profileAdmin.updateAdmin', ['id' => Auth::user()->id]) }}">
               @csrf
               @method('PUT')
                     <div class="form-group">
@@ -44,12 +44,14 @@
                     </div>
 
                     <div class="form-group">
-                      <label>Instagram</label>
+                      <label>Instagram</label><br>
+                      <label>Format Penulisan : https://www.instagram.com/goodgamestoreid/</label>
                       <input type="text" class="form-control" name="instagram" value="{{ Auth::user()->instagram }}" pattern="https?://(www\.)?instagram\.com/.+">
                   </div>
                   
                   <div class="form-group">
-                      <label>Facebook</label>
+                      <label>Facebook</label><br>
+                      <label>Format Penulisan : https://www.facebook.com/goodgamestoreid/</label>
                       <input type="text" class="form-control" name="facebook" value="{{ Auth::user()->facebook }}" pattern="https?://(www\.)?facebook\.com/.+">
                   </div>                  
 

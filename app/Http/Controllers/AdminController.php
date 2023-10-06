@@ -69,10 +69,6 @@ class AdminController extends Controller
         'gerejab','retailerb','organisasib','individub','pemerintahb'));
     }
 
-    function profile(){
-        return view('admin.profile');
-    }
-
     //progressDonasi
     function progressDonasi(){
         $jd = request()->input('jenisDonors');
@@ -158,6 +154,7 @@ class AdminController extends Controller
     function registerAdmin(Request $req){
             User::create([
                  'username' => $req->username,
+                 'name' => $req->name,
                  'email' => $req->email,
                  'password' => bcrypt($req->password),
                  'role' => 'admin',
@@ -234,7 +231,11 @@ class AdminController extends Controller
     }
 
     //Profile Admin
-    public function update(Request $request, $id){
+    function profileAdmin(){
+        return view('admin.profile');
+    }
+
+    public function updateAdmin(Request $request, $id){
 
     $user = User::findOrFail($id);
     $user->update([

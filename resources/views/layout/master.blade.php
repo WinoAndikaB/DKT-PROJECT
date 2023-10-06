@@ -52,6 +52,13 @@
       </div>
       <div class="sidebar-wrapper" id="sidebar-wrapper">
         <ul class="nav">
+          <li class="{{ Request::is('profile*') ? 'active' : '' }}">
+            <a href="{{ url('/profileAdmin') }}">
+                <i class="now-ui-icons users_single-02"></i>
+                <p>Profile</p>
+            </a>
+            <hr color="white">
+        </li>        
           <li class="{{ Request::is('dashboard*') ? 'active' : '' }}">
             <a href="./dashboard">
               <i class="now-ui-icons design_app"></i>
