@@ -18,18 +18,49 @@ class donasiBarangSeeder extends Seeder
     {
         $userData = [
             [
-                'email'=>'falls@gmail.com',
-                'donatur'=>'Wino Andika Batara',
+                'jenisDonor'=>'Gereja',
+                'idJenisDonor'=>'1',
+                'email'=>'stacey@gmail.com',
+                'donatur'=>'Stacey G. Myers',
                 'namaBarang'=>'Buku & Celana',
-                'gambar'=>'img',
-                'pesan'=>'Lahhh11111'
+                'gambar'=>'1a.jpg',
+                'pesan'=>'Semoga Membantu'
             ],
             [
-                'email'=>'wino1@gmail.com',
-                'donatur'=>'Wino Andika Batara',
-                'namaBarang'=>'Laptop',
-                'gambar'=>'img',
-                'pesan'=>'Lahhh2222'
+                'jenisDonor'=>'Organisasi',
+                'idJenisDonor'=>'2',
+                'email'=>'hanzo@gmail.com',
+                'donatur'=>'RM Hanzo Mangkumalorot',
+                'namaBarang'=>'Makanan',
+                'gambar'=>'1b.jpg',
+                'pesan'=>'Semoga Bermanfaat'
+            ],
+            [
+                'jenisDonor'=>'Retailer',
+                'idJenisDonor'=>'3',
+                'email'=>'dara@gmail.com',
+                'donatur'=>'Dara El Cara',
+                'namaBarang'=>'Rak Sepatu',
+                'gambar'=>'1d.jpg',
+                'pesan'=>'Semoga Bermanfaat'
+            ],
+            [
+                'jenisDonor'=>'Pemerintah',
+                'idJenisDonor'=>'4',
+                'email'=>'sachio@gmail.com',
+                'donatur'=>'Sachio Quinn Gho',
+                'namaBarang'=>'Bahan Bangunan',
+                'gambar'=>'unknown.jpg',
+                'pesan'=>'Semoga Bermanfaat'
+            ],
+            [
+                'jenisDonor'=>'Individu',
+                'idJenisDonor'=>'5',
+                'email'=>'brynine@gmail.com',
+                'donatur'=>'Brynine Gho',
+                'namaBarang'=>'Mesin Cuci',
+                'gambar'=>'1c.jpg',
+                'pesan'=>'Gass Terus'
             ],
         ];
         foreach($userData as $key=> $val){

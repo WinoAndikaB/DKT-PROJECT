@@ -25,8 +25,8 @@ Route::get('/listDonasiBarang',[AdminController::class,'listDonasiBarang']);
 Route::get('/listUserTerdaftar',[AdminController::class,'listUserTerdaftar']);
 
 //Admin Profile
-Route::get('/profileAdmin',[AdminController::class,'profile']);
-Route::put('/profile/update/{id}',[AdminController::class,'update'])->name('profile.update');
+Route::get('/profileAdmin',[AdminController::class,'profileAdmin']);
+Route::put('/profileAdmin/updateAdmin/{id}',[AdminController::class,'updateAdmin'])->name('profileAdmin.updateAdmin');
 
 //Menambahkan user Admin di Admin panel
 Route::get('/formTambahUserAdm',[AdminController::class,'formTambahUserAdm']);
@@ -59,8 +59,8 @@ Route::get('/formInputBarang/{id}',[UserController::class,'tampilDataBarang']);
 // Route::post('/updateBarang/{id}',[AdminController::class,'updateBarang']);
 
 //User Profile
-Route::get('/profileUser',[AdminController::class,'profile']);
-Route::put('/profile/update/{id}',[AdminController::class,'update'])->name('profile.update');
+Route::get('/profileUser',[AdminController::class,'profileUser']);
+Route::put('/profileUser/updateUser/{id}',[AdminController::class,'updateUser'])->name('profile.updateUser');
 
 //form menambah donasi uang halaman user
 Route::get('/formInputUang',[UserController::class,'formInputUang']);

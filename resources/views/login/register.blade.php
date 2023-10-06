@@ -92,7 +92,7 @@
                     <i class="now-ui-icons users_single-02"></i>
                     </span>
                 </div>
-                <input type="text" name="name" placeholder="Nama..." class="form-control" />
+                <input type="text" name="username" placeholder="Username..." class="form-control" />
                 </div>
                     <div class="input-group no-border input-lg">
                         <div class="input-group-prepend">
