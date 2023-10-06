@@ -37,10 +37,10 @@ Route::get('/formTambahDonasi',[AdminController::class,'formTambahDonasi']);
 Route::post('/formTambahDonasi/storeTbhDonasi',[AdminController::class,'storeTbhDonasi']);
 
 //Hapus data di Admin Panel
-Route::get('/deleteT/{id}',[AdminController::class,'deleteTambahDonasi']);
-Route::get('/delete/{id}',[AdminController::class,'deleteUserTerdaftar']);
-Route::get('/deleteU/{id}',[AdminController::class,'deleteDonasiUang']);
-Route::get('/deleteB/{id}',[AdminController::class,'deleteDonasiBarang']);
+Route::get('/deleteT/{id}',[AdminController::class,'deleteTambahDonasi'])->name('deleteTambahDonasi');
+Route::get('/delete/{id}',[AdminController::class,'deleteUserTerdaftar'])->name('deleteUserTerdaftar');
+Route::get('/deleteU/{id}',[AdminController::class,'deleteDonasiUang'])->name('deleteDonasiUang');
+Route::get('/deleteB/{id}',[AdminController::class,'deleteDonasiBarang'])->name('deleteDonasiBarang');
 
 //Edit data Tambah Donasi
 Route::get('/tampilDataEditTambahDonasi/{id}',[AdminController::class,'tampilDataEditTambahDonasi']);
