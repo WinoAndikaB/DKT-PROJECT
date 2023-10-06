@@ -37,11 +37,10 @@
 
   <!-- CSS Just for demo purpose, don't include it in your project -->
   <link href="../assets/demo/demo.css" rel="stylesheet" />
-</head>
+  </head>
 
 <body class="">
   <div class="wrapper ">
-
     <div class="sidebar" data-color="orange"><!--Tip 1: You can change the color of the sidebar using: data-color="blue | green | orange | red | yellow"-->
       <div class="logo">
         <a href="" class="simple-text logo-mini">
@@ -126,28 +125,13 @@
             <ul class="navbar-nav">
               <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                  <i class="now-ui-icons ui-1_bell-53"></i>
-                  <p>
-                    
-                  </p>
-                </a>
-                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownMenuLink">
-                  <a class="dropdown-item" href="#">Pesan Baru 1</a>
-                  <a class="dropdown-item" href="#">Pesan Baru 2</a>
-                  <a class="dropdown-item" href="#">Pesan Baru 3</a>
-                  <a class="dropdown-item" href="#">Pesan Baru 4</a>
-                  <a class="dropdown-item" href="#">Pesan Baru 5</a>
-                </div>
-              </li>
-              <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                   <i class="now-ui-icons users_single-02"></i>
                   <p>
                     <span class="d-lg-none d-md-block">Some Actions</span>
                   </p>
                 </a>
                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownMenuLink">
-                  <a class="dropdown-item" href="#">{{Auth::user()->name}}</a>
+                  <a class="dropdown-item" href="/profileAdmin">{{Auth::user()->username}}</a>
                   <a class="dropdown-item" href="/logout">Keluar</a>
                 </div>
               </li>

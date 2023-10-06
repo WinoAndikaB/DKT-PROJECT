@@ -82,7 +82,7 @@ class SessionController extends Controller
     
     function registerUser(Request $req){
        User::create([
-            'name' => $req->name,
+            'username' => $req->username,
             'email' => $req->email,
             'password' => bcrypt($req->password),
             'role' => 'user',
