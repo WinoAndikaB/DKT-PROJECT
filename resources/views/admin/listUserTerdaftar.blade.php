@@ -72,10 +72,10 @@
                           {{$user['role']}}
                         </td>
                         <td>
-                          <a href={{"delete/".$user['id']}}
-                          class="btn btn-danger btn-icon btn-round" onclick="return confirm('Apakah Anda Yakin Mau Menghapus Data Ini?')">
-                          <i class="now-ui-icons ui-1_simple-remove"></i></a>
-                        </td>        
+                          <a href="#" class="btn btn-danger btn-icon btn-round" onclick="showConfirmationModal('{{ route('deleteUserTerdaftar', ['id' => $user['id']]) }}')">
+                              <i class="now-ui-icons ui-1_simple-remove"></i>
+                          </a>
+                      </td>         
                       </tr>
                       @endforeach
                       <b>Total Data :</b> {{$users->count()}}
@@ -94,3 +94,40 @@
 @section('scripts')
 
 @endsection
+
+<!-- Notifikasi -->
+
+<div id="confirmation-modal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+      <div class="modal-content">
+          <div class="modal-header">
+              <h4 class="modal-title">Konfirmasi Hapus Data</h4>
+              <button type="button" class="close" data-dismiss="modal">&times;</button>
+          </div>
+          <div class="modal-body">
+              <p>Apakah Anda yakin ingin menghapus data ini?</p>
+          </div>
+          <div class="modal-footer">
+              <button type="button" class="btn btn-default" data-dismiss="modal">Batal</button>
+              <a id="delete-link" href="#" class="btn btn-danger">Hapus</a>
+          </div>
+      </div>
+  </div>
+</div>
+
+<div id="success-notification" class="alert alert-success" style="display: none;">
+  Data berhasil dihapus.
+</div>
+
+<script>
+  function showConfirmationModal(deleteUrl) {
+      $('#delete-link').attr('href', deleteUrl);
+      $('#confirmation-modal').modal('show');
+  }
+
+  // Setelah data berhasil dihapus
+  function onDeleteSuccess() {
+      $('#confirmation-modal').modal('hide'); // Sembunyikan modal konfirmasi
+      $('#success-notification').fadeIn().delay(2000).fadeOut(); // Tampilkan notifikasi berhasil
+  }
+</script>
