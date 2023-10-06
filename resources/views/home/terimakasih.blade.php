@@ -97,7 +97,7 @@
               </p>
             </a>
             <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownMenuLink">
-              <a class="dropdown-item" href="#">{{Auth::user()->name}}</a>
+              <a class="dropdown-item" href="/profileuser">{{Auth::user()->username}}</a>
               <a class="dropdown-item" href="/logout">Keluar</a>
             </div>
           </li>

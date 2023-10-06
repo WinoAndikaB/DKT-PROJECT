@@ -8,7 +8,7 @@
 
 @section('content')
 
-<div class="row">
+        <div class="row">
           <div class="col-md-12">
             <div class="card">
               <div class="card-header">
@@ -63,7 +63,7 @@
                           {{$user['id']}}
                         </td>
                         <td>
-                          {{$user['name']}}
+                          {{$user['username']}}
                         </td>
                         <td>
                           {{$user['email']}}
@@ -79,8 +79,7 @@
                       </tr>
                       @endforeach
                       <b>Total Data :</b> {{$users->count()}}
-                    </tbody>
-                    
+                    </tbody>     
                   </table>
                 </div>
               </div>
