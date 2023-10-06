@@ -1,20 +1,4 @@
-<!--
 
-=========================================================
-* Now UI Kit - v1.3.0
-=========================================================
-
-* Product Page: https://www.creative-tim.com/product/now-ui-kit
-* Copyright 2019 Creative Tim (http://www.creative-tim.com)
-* Licensed under MIT (https://github.com/creativetimofficial/now-ui-kit/blob/master/LICENSE.md)
-
-* Designed by www.invisionapp.com Coded by www.creative-tim.com
-
-=========================================================
-
-* The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
-
--->
 <!DOCTYPE html>
 <html lang="en">
 
@@ -24,7 +8,7 @@
   <link rel="icon" type="image/png" href="../assets/img/5.png">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
   <title>
-    Form Input Donasi Uang - DOKITA
+    Profile - DOKITA
   </title>
   <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, shrink-to-fit=no' name='viewport' />
   <!--     Fonts and icons     -->
@@ -33,6 +17,23 @@
   <!-- CSS Files -->
   <link href="../assets/css/bootstrap.min.css" rel="stylesheet" />
   <link href="../assets/css/now-ui-kit.css?v=1.3.0" rel="stylesheet" />
+  <!-- CSS Just for demo purpose, don't include it in your project -->
+  <link href="../assets/demo/demo.css" rel="stylesheet" />
+
+  <!--Profiile -->
+  <meta charset="utf-8" />
+  <link rel="apple-touch-icon" sizes="76x76" href="../assets/img/apple-icon.png">
+  <link rel="icon" type="image/png" href="../assets/img/5.png">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+  <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, shrink-to-fit=no' name='viewport' />
+  <!--     Fonts and icons     -->
+  <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700,200" rel="stylesheet" />
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+  <!-- CSS Files -->
+  <link href="../assets/css/bootstrap.min.css" rel="stylesheet" />
+  <link href="../assets/css/now-ui-dashboard.css?v=1.5.0" rel="stylesheet" />
+  <link href="{{ asset('assets/css/now-ui-dashboard.css?v=1.5.0') }}" rel="stylesheet" />
+
   <!-- CSS Just for demo purpose, don't include it in your project -->
   <link href="../assets/demo/demo.css" rel="stylesheet" />
 </head>
@@ -96,7 +97,7 @@
               </p>
             </a>
             <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownMenuLink">
-              <a class="dropdown-item" href="/profileUser">{{Auth::user()->username}}
+              <a class="dropdown-item" href="/profileuser">{{Auth::user()->username}}</a>
               <a class="dropdown-item" href="/logout">Keluar</a>
             </div>
           </li>
@@ -111,7 +112,7 @@
       </div>
       <div class="content-center">
         <div class="container">
-          <h1 class="title">Form Input Donasi Uang</h1>
+          <h1 class="title">Profil Anda</h1>
           <div class="text-center">
             <a href="#pablo" class="btn btn-primary btn-icon btn-round">
               <i class="fab fa-facebook-square"></i>
@@ -129,77 +130,97 @@
     <div class="section section-about-us">
       <div class="container">
         <div class="row">
-          <div class="col-md-8 ml-auto mr-auto text-center">
-            <h2 class="title">Input Donasi</h2>
-            <p class="description">Silakan input sesuai dengan ketentuan dibawah.</p>
-            <p class="description"><b>Catatan :</b> Untuk Nominal Donasi, misalnya anda mau donasi <b>120.000</b>, anda perlu menuliskan seperti ini saja <b>120000 (tidak memakai tiitk).</b></p>
-
-            <form action="/formInputUang/storeUang" method="post">
-              @csrf
-            <div class="card-body">
-              <div class="input-group no-border input-lg">
-                <div class="input-group-prepend">
-                  <span class="input-group-text">
-                    <i class="now-ui-icons design_bullet-list-67"></i>
-                  </span>
-                </div>
-                <input type="text" class="form-control" placeholder="ID..." name="idJenisDonor" readonly value="{{$data->id}}">
-              </div>
-              <div class="input-group no-border input-lg">
-                <div class="input-group-prepend">
-                  <span class="input-group-text">
-                    <i class="now-ui-icons design_bullet-list-67"></i>
-                  </span>
-                </div>
-                <input type="text" class="form-control" placeholder="Jenis Donor..." name="jenisDonor" readonly value="{{$data->jenisDonor}}">
-              </div>
-              <div class="input-group no-border input-lg">
-                <div class="input-group-prepend">
-                  <span class="input-group-text">
-                    <i class="now-ui-icons design_bullet-list-67"></i>
-                  </span>
-                </div>
-                <input type="text" class="form-control" placeholder="Nama Donasi..." name="namaDonasi" readonly value="{{$data->namaDonasi}}">
-              </div>
-
-                <hr>
-                <div class="input-group no-border input-lg">
-                  <div class="input-group-prepend">
-                    <span class="input-group-text">
-                      <i class="now-ui-icons ui-1_email-85"></i>
-                    </span>
+          <div class="col-md-8">
+              <div class="card">
+                  <div class="card-header">
+                      <h5 class="title">Edit Profile</h5>
                   </div>
-                  <input type="email" class="form-control" placeholder="Email..." name="email">
-                </div>
-                <div class="input-group no-border input-lg">
-                  <div class="input-group-prepend">
-                    <span class="input-group-text">
-                      <i class="now-ui-icons users_circle-08"></i>
-                    </span>
+                  <div class="card-body">
+                    <form method="POST" action="{{ route('profile.updateUser', ['id' => Auth::user()->id]) }}">
+                      @csrf
+                      @method('PUT')
+                            <div class="form-group">
+                                <label>Role</label>
+                                <input type="text" class="form-control" disabled="" name="role" value="{{ Auth::user()->role }}">
+                            </div>
+        
+                            <div class="form-group">
+                                <label>Username</label>
+                                <input type="text" class="form-control" disabled="" name="username" value="{{ Auth::user()->username }}">
+                            </div>
+        
+                            <div class="form-group">
+                                <label>Email</label>
+                                <input type="text" class="form-control" disabled="" name="email" value="{{ Auth::user()->email }}">
+                            </div>
+        
+                            <div class="form-group">
+                                <label>Nama</label>
+                                <input type="text" class="form-control" name="name" value="{{ Auth::user()->name }}">
+                            </div>
+        
+                            <div class="form-group">
+                                <label>Alamat</label>
+                                <input type="text" class="form-control" name="alamat" value="{{ Auth::user()->alamat }}">
+                            </div>
+        
+                            <div class="form-group">
+                              <label>Instagram</label><br>
+                              <label>Format Penulisan : https://www.instagram.com/goodgamestoreid/</label>
+                              <input type="text" class="form-control" name="instagram" value="{{ Auth::user()->instagram }}" pattern="https?://(www\.)?instagram\.com/.+">
+                          </div>
+                          
+                          <div class="form-group">
+                              <label>Facebook</label><br>
+                              <label>Format Penulisan : https://www.facebook.com/goodgamestoreid/</label>
+                              <input type="text" class="form-control" name="facebook" value="{{ Auth::user()->facebook }}" pattern="https?://(www\.)?facebook\.com/.+">
+                          </div>                  
+        
+                            <div class="form-group">
+                                <label>About Me</label>
+                                <textarea rows="4" class="form-control" name="aboutme">{{ Auth::user()->aboutme}}</textarea>
+                            </div>
+        
+                              <button type="submit" class="btn btn-primary">Save Changes</button>
+                              <a href="/user" class="btn btn-info">Kembali</a>
+                              </form>
+                          </div>
+                      </div>
                   </div>
-                  <input type="text" placeholder="Donatur..." class="form-control" name="donatur">
-                </div>
-                <div class="input-group no-border input-lg">
-                  <div class="input-group-prepend">
-                    <span class="input-group-text">
-                      <i class="now-ui-icons business_money-coins"></i>
-                    </span>
+        
+                    <div class="col-md-4">
+                      <div class="card card-user">
+                        <div class="image">
+                          <img src="../assets/img/bg5.jpg" alt="...">
+                        </div>
+                        <div class="card-body">
+                          <div class="author">
+                            <a href="#">
+                              <img class="avatar border-gray" src="../assets/img/eva.jpg" alt="...">
+                              <h5 class="title">{{Auth::user()->name}}</h5>
+                            </a>
+                            <p class="description">
+                              {{Auth::user()->username}}
+                            </p>
+                          </div>
+                          <p class="description text-center">
+                            {{Auth::user()->aboutme}}
+                          </p>
+                        </div>
+                        <hr>
+                        <div class="button-container">
+                          <a href="{{Auth::user()->facebook}}" class="btn btn-neutral btn-icon btn-round btn-lg">
+                            <i class="fab fa-facebook-f"></i>
+                          </a>
+                          <a href="{{Auth::user()->instagram}}" class="btn btn-neutral btn-icon btn-round btn-lg">
+                            <i class="fab fa-instagram"></i>
+                          </a>
+                        </div>
+                      </div>
+                    </div>
                   </div>
-                  <input type="text" class="form-control" placeholder="Nominal Donasi..." name="nominalDonasi">
-                </div>
-                <div class="input-group no-border input-lg">
-                  <div class="input-group-prepend">
-                    <span class="input-group-text">
-                      <i class="now-ui-icons files_paper"></i>
-                    </span>
-                  </div>
-                  <input type="text" placeholder="Pesan..." class="form-control" name="pesan">
-                </div>
-                <button class="btn btn-primary btn-round btn-lg btn-block">Bayar</button>
-                <a href="/user"class="btn btn-edit btn-round btn-lg btn-block"> Kembali</a>
-              </div>
-              
-                </form>
+      </div>
+    </div>
       
     <footer class="footer">
       <div class=" container ">

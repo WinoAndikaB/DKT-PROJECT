@@ -48,6 +48,38 @@
                   </div>
                   <input type="password" name="password" placeholder="Password..." class="form-control" />
                 </div>
+                <div class="input-group no-border input-lg">
+                  <div class="input-group-prepend">
+                    <span class="input-group-text">
+                      <i class="now-ui-icons ui-1_lock-circle-open"></i>
+                    </span>
+                  </div>
+                  <input type="text" name="alamat" placeholder="Alamat..." class="form-control" />
+                </div>
+                <div class="input-group no-border input-lg">
+                  <div class="input-group-prepend">
+                    <span class="input-group-text">
+                      <i class="now-ui-icons ui-1_lock-circle-open"></i>
+                    </span>
+                  </div>
+                  <input type="text" name="instagram" placeholder="Instagram..." class="form-control" />
+                </div>
+                <div class="input-group no-border input-lg">
+                  <div class="input-group-prepend">
+                    <span class="input-group-text">
+                      <i class="now-ui-icons ui-1_lock-circle-open"></i>
+                    </span>
+                  </div>
+                  <input type="text" name="facebook" placeholder="Facebook..." class="form-control" />
+                </div>
+                <div class="input-group no-border input-lg">
+                  <div class="input-group-prepend">
+                    <span class="input-group-text">
+                      <i class="now-ui-icons ui-1_lock-circle-open"></i>
+                    </span>
+                  </div>
+                  <input type="text" name="aboutme" placeholder="About Me..." class="form-control" />
+                </div>
               </div>
               <div class="card-footer text-center">
                 <button name="submit" type="submit" class="btn btn-primary">Register</button>

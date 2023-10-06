@@ -104,4 +104,24 @@ class UserController extends Controller
     function terimakasih(){
         return view('home.terimakasih');
     }
+
+    //Profile User
+    public function profileuser(){
+        return view('home.profileUser');
+    }
+    
+
+    public function updateUser(Request $request, $id){
+
+    $user = User::findOrFail($id);
+    $user->update([
+        'name' => $request->input('name'),
+        'alamat' => $request->input('alamat'),
+        'instagram' => $request->input('instagram'),
+        'facebook' => $request->input('facebook'),
+        'aboutme' => $request->input('aboutme'),
+    ]);
+
+    return redirect('/profileUser');
+    }
 }

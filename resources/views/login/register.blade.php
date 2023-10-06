@@ -18,6 +18,20 @@
   <link href="../assets/css/now-ui-kit.css?v=1.3.0" rel="stylesheet" />
   <!-- CSS Just for demo purpose, don't include it in your project -->
   <link href="../assets/demo/demo.css" rel="stylesheet" />
+
+  <meta charset="utf-8" />
+  <link rel="apple-touch-icon" sizes="76x76" href="../assets/img/apple-icon.png">
+  <link rel="icon" type="image/png" href="../assets/img/favicon.png">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+  <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, shrink-to-fit=no' name='viewport' />
+  <!--     Fonts and icons     -->
+  <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700,200" rel="stylesheet" />
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+  <!-- CSS Files -->
+  <link href="../assets/css/bootstrap.min.css" rel="stylesheet" />
+  <link href="../assets/css/now-ui-dashboard.css?v=1.5.0" rel="stylesheet" />
+  <!-- CSS Just for demo purpose, don't include it in your project -->
+  <link href="../assets/demo/demo.css" rel="stylesheet" />
 </head>
 
 <body class="login-page sidebar-collapse">
@@ -82,50 +96,85 @@
       <div class="container">
         <div class="col-md-4 ml-auto mr-auto">
           <div class="card card-login card-plain">
-        <form class="form" method="post" action="registerUser">
-          @csrf
-            <div class="card-body">
-                <h3 class="title">Register</h3>
-            <div class="input-group no-border input-lg">
-                <div class="input-group-prepend">
-                    <span class="input-group-text">
-                    <i class="now-ui-icons users_single-02"></i>
-                    </span>
-                </div>
-                <input type="text" name="username" placeholder="Username..." class="form-control" />
-                </div>
-                    <div class="input-group no-border input-lg">
-                        <div class="input-group-prepend">
-                            <span class="input-group-text">
-                            <i class="now-ui-icons ui-1_email-85"></i>
-                            </span>
+            <form class="form" method="post" action="registerUser">
+              @csrf
+              <div class="card-body">
+                  <div class="row">
+                    <div class="col-md-4 px-1">
+                      <div class="form-group">
+                        <label style="color: white;"><strong>Username</strong></label>
+                        <input type="text" class="form-control" name="username" placeholder="Username Anda..." required>
+                      </div>
+                    </div>
+                    <div class="col-md-8 pl-1">
+                      <div class="form-group">
+                        <label style="color: white;"><strong>Email</strong></label>
+                        <input type="email" class="form-control" name="email" placeholder="Email Anda..." required>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-md-12 pl-1">
+                      <div class="form-group">
+                        <label style="color: white;"><strong>Nama</strong></label>
+                        <input type="text" class="form-control" name="name" placeholder="Nama Anda..." required>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-md-12 pl-1">
+                      <div class="form-group">
+                        <label style="color: white;"><strong>Password</strong></label>
+                        <input type="text" class="form-control" name="password" placeholder="Password Anda..." required>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-md-12 pl-1">
+                      <div class="form-group">
+                        <label style="color: white;"><strong>Alamat</strong></label>
+                        <input type="text" class="form-control" name="alamat" placeholder="Alamat Anda..." required>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-md-6 pl-1">
+                      <div class="form-group">
+                        <label style="color: white;"><strong>Instagram</strong></label>
+                        <input type="text" class="form-control" name="instagram" placeholder="Instagram Anda..." required>
+                      </div>
+                    </div>
+                    <div class="col-md-6 pl-1">
+                      <div class="form-group">
+                        <label style="color: white;"><strong>Facebook</strong></label>
+                        <input type="text" class="form-control" name="facebook" placeholder="Facebook Anda..." required>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-md-12 pl-1">
+                      <div class="form-group">
+                        <label style="color: white;"><strong>About Me</strong></label>
+                        <textarea rows="4" cols="80" class="form-control" name="aboutme" placeholder="Tentang Anda..." required></textarea>
+                      </div>
+                    </div>
+                  </div>
+              </div>
+              <div class="card-footer text-center">
+                <button name="submit" type="submit" class="btn btn-primary btn-round btn-lg btn-block">Register</button>
+                  <div class="pull-left">
+                      <h6>
+                        <a class="link">Sudah Register?</a>
+                      </h6>
+                      </div>
+                        <div class="pull-right">
+                          <h6>
+                            <a href="/login" class="link">Login!</a>
+                          </h6>
                         </div>
-                            <input type="email" name="email" value="" class="form-control" placeholder="Email...">
-                        </div>
-                        <div class="input-group no-border input-lg">
-                        <div class="input-group-prepend">
-                            <span class="input-group-text">
-                            <i class="now-ui-icons ui-1_lock-circle-open"></i>
-                            </span>
-                        </div>
-                        <input type="password" name="password" placeholder="Password..." class="form-control" />
-                        </div>
-                        </div>
-                            <div class="card-footer text-center">
-                                <button name="submit" type="submit" class="btn btn-primary btn-round btn-lg btn-block">Register</button>
-                                <div class="pull-left">
-                                <h6>
-                                    <a class="link">Sudah Register?</a>
-                                </h6>
-                                </div>
-                                <div class="pull-right">
-                                  <h6>
-                                    <a href="/login" class="link">Login!</a>
-                                  </h6>
-                                </div>
-                                <hr>
-                            </form>
-                        </div>
+                        <hr>
+                      </form>
+                      </div>
                     </div>
                 </div>
             </div>

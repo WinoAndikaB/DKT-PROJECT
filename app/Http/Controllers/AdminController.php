@@ -158,6 +158,10 @@ class AdminController extends Controller
                  'email' => $req->email,
                  'password' => bcrypt($req->password),
                  'role' => 'admin',
+                 'alamat'=> $req->alamat,
+                 'instagram'=> $req->instagram,
+                 'facebook'=> $req->facebook,
+                 'aboutme'=> $req->aboutme,
             ]);
                  return redirect('listUserTerdaftar');
          }
@@ -232,7 +236,7 @@ class AdminController extends Controller
 
     //Profile Admin
     function profileAdmin(){
-        return view('admin.profile');
+        return view('admin.profileAdmin');
     }
 
     public function updateAdmin(Request $request, $id){
