@@ -243,7 +243,7 @@ class AdminController extends Controller
         'alamat' => $request->input('alamat'),
         'instagram' => $request->input('instagram'),
         'facebook' => $request->input('facebook'),
-        'about' => $request->input('about'),
+        'aboutme' => $request->input('aboutme'),
     ]);
 
     return redirect('/profileAdmin');

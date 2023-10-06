@@ -57,7 +57,7 @@
 
                     <div class="form-group">
                         <label>About Me</label>
-                        <textarea rows="4" class="form-control" name="about">{{ Auth::user()->about }}</textarea>
+                        <textarea rows="4" class="form-control" name="aboutme">{{ Auth::user()->aboutme}}</textarea>
                     </div>
 
                       <button type="submit" class="btn btn-primary">Save Changes</button>
@@ -83,7 +83,7 @@
                     </p>
                   </div>
                   <p class="description text-center">
-                    {{Auth::user()->about}}
+                    {{Auth::user()->aboutme}}
                   </p>
                 </div>
                 <hr>
