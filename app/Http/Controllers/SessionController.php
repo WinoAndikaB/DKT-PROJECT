@@ -83,11 +83,16 @@ class SessionController extends Controller
     function registerUser(Request $req){
        User::create([
             'username' => $req->username,
+            'name' => $req->name,
             'email' => $req->email,
             'password' => bcrypt($req->password),
             'role' => 'user',
-       ]);
-            return redirect('/login');
+            'alamat'=> $req->alamat,
+            'instagram'=> $req->instagram,
+            'facebook'=> $req->facebook,
+            'aboutme'=> $req->aboutme,
+        ]);
+        return redirect('/login');
     }
 
 

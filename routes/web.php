@@ -55,12 +55,10 @@ Route::middleware(['user'])->group(function () {
 Route::get('/user',[UserController::class,'index']);
 Route::get('/formInputUang/{id}',[UserController::class,'tampilDataUang']);
 Route::get('/formInputBarang/{id}',[UserController::class,'tampilDataBarang']);
-// Route::post('/updateUang/{id}',[AdminController::class,'updateUang']);
-// Route::post('/updateBarang/{id}',[AdminController::class,'updateBarang']);
 
 //User Profile
-Route::get('/profileUser',[AdminController::class,'profileUser']);
-Route::put('/profileUser/updateUser/{id}',[AdminController::class,'updateUser'])->name('profile.updateUser');
+Route::get('/profileUser', [UserController::class, 'profileUser'])->name('profile.user');
+Route::put('/profileUser/updateUser/{id}',[UserController::class,'updateUser'])->name('profile.updateUser');
 
 //form menambah donasi uang halaman user
 Route::get('/formInputUang',[UserController::class,'formInputUang']);
