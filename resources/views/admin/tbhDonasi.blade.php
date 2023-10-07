@@ -12,34 +12,52 @@
           <div class="col-md-12">
             <div class="card">
               <div class="card-header">
-                <h4 class="card-title"> Tambah Donasi </h4>
-
-                <a href="/formTambahDonasi" class="btn btn-info">Tambah</i></a>
+                <div class="d-flex justify-content-between align-items-center">
+                  <h4 class="card-title">Tambah Donasi</h4>
+                  <a href="/formTambahDonasi" class="btn btn-info">Tambah</a>
+                </div>
+                <hr>
+              
+                <div class="row">
+                  <div class="col-md-6">
+                    <form action="{{ url('tbhDonasi') }}" method="GET" class="form-inline">
+                      <div class="form-group">
+                        <select name="jenisDonors" class="form-control">
+                          <option value="">Filter Jenis Donasi</option>
+                          <option value="Gereja">Gereja</option>
+                          <option value="Organisasi">Organisasi</option>
+                          <option value="Retailer">Retailer</option>
+                          <option value="Individu">Individu</option>
+                          <option value="Pemerintah">Pemerintah</option>
+                        </select>
+                      </div>
+                      <div class="form-group ml-2">
+                        <button type="submit" class="btn btn-primary">Filter Tambah Donasi</button>
+                      </div>
+                    </form>
+                  </div>
+                </div>
+              </div>
               
 
-              <div class="col-md-6">
-                <form action="{{ url('tbhDonasi') }}" method="GET">
-                  <div class="row">
-                    <div class="form-group">
-                      <select name="jenisDonors" class="form-control">
-                        <option value="">Filter Jenis Donasi</option>
-                        <option value="Gereja">Gereja</option>
-                        <option value="Organisasi">Organisasi</option>
-                        <option value="Retailer">Retailer</option>
-                        <option value="Individu">Individu</option>
-                        <option value="Pemerintah">Pemerintah</option>
-                      </select>
-                    
-                      <div class="form-group">
-                      <button type="submit" class="btn btn-primary">Filter Tambah Donasi</button>
-                    </div>
-                   </div>
-                  </div>
-                </form>
-              </div>
-            </div>
-
               <hr>
+
+              @if(session('success'))
+                  <div class="alert alert-success">
+                      {{ session('success') }}
+                  </div>
+              @endif
+
+              @if($errors->any())
+                  <div class="alert alert-danger">
+                      <ul>
+                          @foreach($errors->all() as $error)
+                              <li>{{ $error }}</li>
+                          @endforeach
+                      </ul>
+                  </div>
+              @endif
+
               <div class="card-body">
                 <div class="table-responsive">
                   <table class="table">
