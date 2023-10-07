@@ -1,20 +1,32 @@
-<!--
+<style>
+  /* CSS untuk efek fade in dan fade out */
+  .fade-in {
+      animation: fadeIn 1s ease-in-out forwards;
+      display: none;
+  }
 
-=========================================================
-* Now UI Kit - v1.3.0
-=========================================================
+  .fade-out {
+      animation: fadeOut 1s ease-in-out forwards;
+  }
 
-* Product Page: https://www.creative-tim.com/product/now-ui-kit
-* Copyright 2019 Creative Tim (http://www.creative-tim.com)
-* Licensed under MIT (https://github.com/creativetimofficial/now-ui-kit/blob/master/LICENSE.md)
+  @keyframes fadeIn {
+      from {
+          opacity: 0;
+      }
+      to {
+          opacity: 1;
+      }
+  }
 
-* Designed by www.invisionapp.com Coded by www.creative-tim.com
-
-=========================================================
-
-* The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
-
--->
+  @keyframes fadeOut {
+      from {
+          opacity: 1;
+      }
+      to {
+          opacity: 0;
+      }
+  }
+</style>
 
 
 <!DOCTYPE html>
@@ -118,20 +130,21 @@
     <br>
     <hr>
 
-    <!-- Welcome Notification -->
-    <div id="alertContainer">
-      <div class="alert alert-primary alert-dismissible fade show" role="alert">
-        <div style="text-align: center;">
-          <i class="now-ui-icons ui-1_bell-53"></i>
-          <strong>Welcome, {{ Auth::user()->name }}!</strong> You have successfully logged in.
-        </div>
-        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-    </div>
-
     <div class="container">
+
+       <!-- Welcome Notification -->
+        <div id="alertContainer">
+          <div id="alertMessage" class="alert alert-primary alert-dismissible" role="alert" style="opacity: 0; display: none; transition: opacity 0.5s ease-in-out;">
+            <div style="text-align: center;">
+              <i class="now-ui-icons ui-1_bell-53"></i>
+              <strong>Welcome, {{ Auth::user()->name }}!</strong> You have successfully logged in.
+            </div>
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+        </div>
+
             <div class="text-center content-center">
               <form action="{{ url('user') }}" method="GET">
                 <div class="row">
@@ -258,9 +271,35 @@
 </html>
 
 <script>
-  // Fungsi untuk menghilangkan notifikasi setelah beberapa detik
-  setTimeout(function() {
-    var alertContainer = document.getElementById('alertContainer');
-    alertContainer.innerHTML = ''; // Menghapus notifikasi dari DOM
-  }, 5000); // Menghilangkan notifikasi setelah 5 detik (5000 milidetik)
-  </script>
+  // Fungsi untuk menampilkan notifikasi dengan efek fade in
+  function fadeIn(element) {
+    element.style.display = 'block';
+    setTimeout(function() {
+      element.style.opacity = 1;
+    }, 10); // Setelah menampilkan element, atur opacity ke 1 dengan jeda 10 milidetik
+  }
+
+  // Fungsi untuk menghilangkan notifikasi dengan efek fade out
+  function fadeOut(element) {
+    element.style.opacity = 0;
+    setTimeout(function() {
+      element.style.display = 'none';
+    }, 500); // Menghilangkan notifikasi setelah 0.5 detik (500 milidetik) dengan efek fade out
+  }
+
+  // Fungsi untuk menampilkan dan menghilangkan notifikasi dengan efek fade
+  function showNotification() {
+    var alertMessage = document.getElementById('alertMessage');
+    fadeIn(alertMessage);
+
+    // Menghilangkan notifikasi setelah beberapa detik dengan efek fade out
+    setTimeout(function() {
+      fadeOut(alertMessage);
+    }, 5000); // Menghilangkan notifikasi setelah 5 detik (5000 milidetik)
+  }
+
+  // Panggil fungsi untuk menampilkan notifikasi
+  showNotification();
+</script>
+
+  
