@@ -20,7 +20,6 @@
   </div>
 </div>
 
-
 <!-- Box Of Dashboard -->
         <div class="row">
           <div class="col-lg-4">
