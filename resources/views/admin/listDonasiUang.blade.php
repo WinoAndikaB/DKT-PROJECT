@@ -15,9 +15,9 @@
               <div class="card-header">
                 <h4 class="card-title"> List Donasi Uang</h4>
                 
-                <div class="col-md-6">
+                <div class="row">
+                  <div class="col-md-2">
                   <form action="{{ url('listDonasiUang') }}" method="GET">
-                    <div class="row">
                       <div class="form-group">
                         <select name="jenisDonors" class="form-control">
                           <option value="">Filter Jenis Donasi</option>
@@ -28,15 +28,14 @@
                           <option value="Pemerintah">Pemerintah</option>
                         </select>
                       
-                      <div class="form-group">
+                      <div class="form-group ml-2">
                         <button type="submit" class="btn btn-primary">Filter Donasi Uang</button>
                       </div>
-                    </div>
-                    </div>
-                  </form>
+                    </form>
+                  </div>
                 </div>
-                 <hr>
               </div>
+              <hr>
               <div class="card-body">
                 <div class="table-responsive">
                   <table class="table">

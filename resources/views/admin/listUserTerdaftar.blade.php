@@ -12,30 +12,34 @@
           <div class="col-md-12">
             <div class="card">
               <div class="card-header">
-                <h4 class="card-title"> List User Terdaftar</h4>
-                <a href="/formTambahUserAdm" class="btn btn-info">Tambah User Admin</i></a>
-
-               <div class="col-md-6">
-                <form action="{{ url('listUserTerdaftar') }}" method="GET">
-                  <div class="row">
-                    <div class="form-group">
-                      <select name="roles" class="form-control">
-                        <option value="">Filter Berdasarkan Role</option>
-                        <option value="user">User</option>
-                        <option value="admin">Admin</option>
-                      </select>
-                    
-                    <div class="form-group">
-                      <button type="submit" class="btn btn-primary">Filter Role</button>
-                    </div>
+                <div class="d-flex justify-content-between align-items-center">
+                  <h4 class="card-title">List User Terdaftar</h4>
+                  <div class="text-right">
+                    <a href="/formTambahUserAdm" class="btn btn-info">Tambah User Admin</a>
                   </div>
+                </div>
+                <hr>
+              
+                <div class="row">
+                  <div class="col-md-5">
+                    <form action="{{ url('listUserTerdaftar') }}" method="GET" class="form-inline">
+                      <div class="form-group">
+                        <select name="roles" class="form-control">
+                          <option value="">Filter Berdasarkan Role</option>
+                          <option value="user">User</option>
+                          <option value="admin">Admin</option>
+                        </select>
+                      </div>
+              
+                      <div class="form-group ml-2">
+                        <button type="submit" class="btn btn-primary">Filter Role</button>
+                      </div>
+                    </form>
                   </div>
-                </form>
+                </div>
               </div>
-
-               <hr>
-
-              </div>
+              <hr>
+            
               <div class="card-body">
                 <div class="table-responsive">
                   <table class="table">
