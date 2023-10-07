@@ -24,8 +24,8 @@ class DummySeeder extends Seeder
                 'role'=>'admin',
                 'password' => Hash::make('123'),
                 'alamat'=>'Jl.Ebony Raya A1/6',
-                'instagram'=>'@wino_a.b.',
-                'facebook'=>'WinoAndikaBatara',
+                'instagram'=>'https://www.instagram.com/wino_a.b/',
+                'facebook'=>'https://www.facebook.com/wino.batara/?locale=id_ID',
                 'aboutme'=>'Hidup Kadang Tidak Adil Abang Kuh'
             ],
             [
@@ -35,8 +35,8 @@ class DummySeeder extends Seeder
                 'role'=>'admin',
                 'password' => Hash::make('123'),
                 'alamat'=>'Jl.Sudirman BC No. 17',
-                'instagram'=>'@bintangAja',
-                'facebook'=>'BintangAjaes',
+                'instagram'=>'https://www.instagram.com/shxtbintang/',
+                'facebook'=>'https://www.facebook.com/bintang.hope.3?locale=id_ID',
                 'aboutme'=>'Senggol Dong'
             ],
         ];
@@ -49,20 +49,20 @@ class DummySeeder extends Seeder
                 'role'=>'user',
                 'password' => Hash::make('123'),
                 'alamat'=>'Jl.Satria Dua No. 29',
-                'instagram'=>'@koboAja',
-                'facebook'=>'Kobokans',
+                'instagram'=>'https://www.instagram.com/kobokanaeru/',
+                'facebook'=>'https://www.facebook.com/KoboKanaeru/',
                 'aboutme'=>'Bokobokobo kanaeru at your service, let me to be your sun to sun your day ehe'
             ],
             [
-                'username'=>'PhoenixAra',
-                'name'=>'Takahashi Kiara',
-                'email'=>'usertiga@gmail.com',
+                'username'=>'Moona98',
+                'name'=>'Moona Hoshinova',
+                'email'=>'moona@gmail.com',
                 'role'=>'user',
-                'password'=>bcrypt('1234'),
-                'alamat'=>'Jl.Yagooo Blok 17',
-                'instagram'=>'@kiaraAja',
-                'facebook'=>'KiaraChan',
-                'aboutme'=>'Kikkeriki takahashi kiara desuuu, yoroshiku neeee'
+                'password'=>bcrypt('123'),
+                'alamat'=>'Jl.Yagooo Office A17',
+                'instagram'=>'https://www.instagram.com/moonahoshinova/',
+                'facebook'=>'https://www.facebook.com/moonahoshinovaholoID/?locale=id_ID',
+                'aboutme'=>'Hello Moonafic And My Pets'
             ],
         ];
 
