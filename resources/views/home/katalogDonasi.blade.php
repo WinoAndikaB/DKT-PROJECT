@@ -118,6 +118,19 @@
     <br>
     <hr>
 
+    <!-- Welcome Notification -->
+    <div id="alertContainer">
+      <div class="alert alert-primary alert-dismissible fade show" role="alert">
+        <div style="text-align: center;">
+          <i class="now-ui-icons ui-1_bell-53"></i>
+          <strong>Welcome, {{ Auth::user()->name }}!</strong> You have successfully logged in.
+        </div>
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+    </div>
+
     <div class="container">
             <div class="text-center content-center">
               <form action="{{ url('user') }}" method="GET">
@@ -243,3 +256,11 @@
 </body>
 
 </html>
+
+<script>
+  // Fungsi untuk menghilangkan notifikasi setelah beberapa detik
+  setTimeout(function() {
+    var alertContainer = document.getElementById('alertContainer');
+    alertContainer.innerHTML = ''; // Menghapus notifikasi dari DOM
+  }, 5000); // Menghilangkan notifikasi setelah 5 detik (5000 milidetik)
+  </script>

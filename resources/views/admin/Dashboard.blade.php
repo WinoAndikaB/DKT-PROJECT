@@ -7,6 +7,18 @@
 
 @section('content')
 
+<!-- Welcome Notification -->
+<div id="alertContainer">
+  <div class="alert alert-primary alert-dismissible fade show" role="alert">
+    <div style="text-align: center;">
+      <i class="now-ui-icons ui-1_bell-53"></i>
+      <strong>Welcome, {{ Auth::user()->name }}!</strong> You have successfully logged in.
+    </div>
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+</div>
 
 
 <!-- Box Of Dashboard -->
@@ -96,19 +108,7 @@
             </div>
           </div>
         </div>
-
-        
-
-        <!-- Table Below -->
-          <div class="col-md-12">
-            <div class="card card-plain">
-              <div class="card-header">
-                <h4 class="card-title"> Welcome, <b>{{Auth::user()->name}} </b> di Admin Panel</h4>
-                <p class="category"> Di panel admin ini akan memantau data donasi yang diberikan.</p>
-
-              </div>
-            </div>
-          </div>
+<br>
 
         <div class="container">
           <div class="row">
@@ -209,3 +209,11 @@
 @section('scripts')
 
 @endsection
+
+<script>
+  // Fungsi untuk menghilangkan notifikasi setelah beberapa detik
+  setTimeout(function() {
+    var alertContainer = document.getElementById('alertContainer');
+    alertContainer.innerHTML = ''; // Menghapus notifikasi dari DOM
+  }, 5000); // Menghilangkan notifikasi setelah 5 detik (5000 milidetik)
+  </script>
