@@ -8,6 +8,7 @@ use App\Models\tambahdonases;
 use Illuminate\Http\Request;
 use App\Models\User;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Session;
 
 class SessionController extends Controller
 {
@@ -98,30 +99,57 @@ class SessionController extends Controller
 
 public function info() {
 return view('home.info');
-
-
 }
+    // public function login(Request $request){
+    //     //dd($request);
+    //     $credentials = $request->validate([
+    //         'email' => ['required', 'string', 'max:100', 'email'],
+    //         'password' => ['required']
+    //     ]);
+
+    //     if (Auth::attempt($credentials)){
+    //         if(Auth::user()->role == 'admin'){
+    //             $request->session()->regenerate();
+    //             return redirect()->intended('/admin');
+    //         }
+    //         if(Auth::user()->role == 'user'){
+    //             $request->session()->regenerate();
+    //             return redirect()->intended('/user');
+    //         }
+    //     }
+    //     return back()->withErrors([
+    //         'email' => 'Email and Password invalid'
+    //     ])->onlyInput('email');
+    // }
+
+
     public function login(Request $request){
-        //dd($request);
         $credentials = $request->validate([
             'email' => ['required', 'string', 'max:100', 'email'],
             'password' => ['required']
         ]);
-
+    
         if (Auth::attempt($credentials)){
             if(Auth::user()->role == 'admin'){
                 $request->session()->regenerate();
+                // Flash a session variable to indicate a successful login
+                Session::flash('success', 'Welcome, ' . Auth::user()->name . '! You have successfully logged in.');
                 return redirect()->intended('/admin');
             }
             if(Auth::user()->role == 'user'){
                 $request->session()->regenerate();
+                // Flash a session variable to indicate a successful login
+                Session::flash('success', 'Welcome, ' . Auth::user()->name . '! You have successfully logged in.');
                 return redirect()->intended('/user');
             }
         }
+    
         return back()->withErrors([
             'email' => 'Email and Password invalid'
         ])->onlyInput('email');
     }
+    
+
 
         function logout(){
             Auth::logout();
